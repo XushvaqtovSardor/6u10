@@ -15,7 +15,12 @@
                 <img src="./img/smallsantaicon.png" alt="Christmas">
                 <span>Christmas</span>
             </div>
-            <ul class="nav-menu">
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#celebrate" class="nav-link">Celebrate</a></li>
                 <li><a href="#gifts" class="nav-link">Gifts</a></li>
@@ -219,6 +224,24 @@
             <p class="copyright">© Bedimcode. All rights reserved</p>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show-menu');
+            navToggle.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu');
+                navToggle.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

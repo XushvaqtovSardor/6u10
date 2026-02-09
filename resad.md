@@ -1,1 +1,1 @@
-https://fancy-jalebi-6d5790.netlify.app/   ##loyiha linki
+https://ephemeral-starburst-5ea912.netlify.app/  ##loyiha linki
