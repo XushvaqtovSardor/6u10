@@ -233,13 +233,23 @@
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('show-menu');
             navToggle.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('show-menu') ? 'hidden' : '';
         });
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('show-menu');
                 navToggle.classList.remove('active');
+                document.body.style.overflow = '';
             });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('show-menu');
+                navToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 </body>
